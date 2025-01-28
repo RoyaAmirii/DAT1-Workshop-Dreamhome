@@ -1,0 +1,10 @@
+.open dreamhome.sqlite
+.mode column
+-- 6.19
+SELECT staffNo, fName, lNmae, position
+FROM staff
+WHERE branchNo = (SELECT branchNo
+FROM branch
+WHERE street = '163 Main st';)
+SELECT postcode AS Property_Postcode
+FROM properties;
